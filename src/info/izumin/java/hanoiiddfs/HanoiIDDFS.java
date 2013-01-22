@@ -1,4 +1,4 @@
-package info.izumin.java.hanoiddfs;
+package info.izumin.java.hanoiiddfs;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -34,8 +34,8 @@ public class HanoiIDDFS {
 		depth++;
 		Set<Hanoi> nextNode = open(hanoi, open, closed);
 		
-		System.out.println("current:" + hanoi.toString());
-		display("next:", nextNode);
+//		System.out.println("current:" + hanoi.toString());
+//		display("next:", nextNode);
 		
 		for (Hanoi h : nextNode) {
 			if (h.isCompleted()) {
@@ -58,7 +58,8 @@ public class HanoiIDDFS {
 	public Set<Hanoi> open(Hanoi hanoi, Set<Hanoi> open, Set<Hanoi> closed) {
 		Set<Hanoi> nextNode = new HashSet<Hanoi>();
 		for (Hanoi h : hanoi.getOpenableNode()) {
-			if (!open.contains(h) && !closed.contains(h)) nextNode.add(h);
+//			if (!open.contains(h) && !closed.contains(h)) nextNode.add(h);
+		    if (!h.equals(hanoi.getParent())) nextNode.add(h);
 		}
 		open.addAll(nextNode);
 		display("open:", open);

@@ -1,4 +1,4 @@
-package info.izumin.java.hanoiddfs;
+package info.izumin.java.hanoiiddfs;
 
 public class SearchHanoiIDDFS {
 
